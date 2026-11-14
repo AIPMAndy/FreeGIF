@@ -1,0 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { Script } from 'node:vm';
+const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+if(!html.startsWith('<!doctype html>') || !html.includes('</html>')) throw Error('Missing HTML');
+if(!html.includes('canvas') || !html.includes('encodeGif') || !html.includes('download')) throw Error('GIF editor required modules missing');
+const blocks=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
+const js=blocks.filter(x=>!x[1].includes('application/ld+json')).map(x=>x[2]);
+if(!js.length) throw Error('Inline JavaScript missing');
+for(const [i,code] of js.entries())new Script(code,{filename:'FreeGIF-inline-'+i+'.js'});
+console.log('FreeGIF standalone HTML + JavaScript syntax: OK');
