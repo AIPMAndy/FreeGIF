@@ -11,8 +11,9 @@
 - [x] 六类轻动效：漂浮 / 弹跳 / 摇摆 / 呼吸 / 双图切换 / 打字标题
 - [x] 图片、文案、背景、署名与画幅设置
 - [x] Python CLI 与 Codex Skill
-- [x] GitHub Pages Actions 工作流
-- [ ] 线上 Pages 实际部署与手机真机复测（依赖发布状态）
+- [x] GitHub Pages Actions 工作流仍在仓库中；本仓库 Pages 未开启（has_pages 为 false）
+- [x] 在线地址 https://aipmandy.github.io/FreeGIF/ 由 AIPMAndy.github.io 托管 FreeGIF 目录（2026-11-15 HTTP 200）
+- [ ] 手机真机复测
 
 ## V0.2｜增长验证优先
 
